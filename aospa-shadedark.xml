@@ -11,8 +11,6 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <remove-project name="AOSPA/android_build_release" />
-  <project path="build/release" name="android_build_release" remote="shadedark" />
   <remove-project name="AOSPA/android_build_soong" />
   <project path="build/soong" name="android_build_soong" remote="shadedark" >
     <linkfile src="root.bp" dest="Android.bp" />
@@ -24,14 +22,10 @@
   <project path="bootable/recovery" name="AOSPA/android_bootable_recovery" remote="aospa" /> -->
 
   <!-- Core -->
-  <remove-project name="AOSPA/android_art" />
-  <project path="art" name="android_art" remote="shadedark" />
   <remove-project name="AOSPA/android_bionic" />
   <project path="bionic" name="android_bionic" remote="shadedark" />
 
   <!-- Development -->
-  <remove-project name="AOSPA/android_development" />
-  <project path="development" name="android_development" remote="shadedark" />
 
   <!-- Device -->
   <remove-project name="AOSPA/android_device_qcom_common" />
@@ -49,28 +43,12 @@
   <project path="external/arm-optimized-routines" name="AOSPA/android_external_arm-optimized-routines" remote="aospa" />
   <remove-project name="platform/external/e2fsprogs" />
   <project path="external/e2fsprogs" name="AOSPA/android_external_e2fsprogs" remote="aospa" /> -->
-  <remove-project name="AOSPA/android_external_exfatprogs" />
-  <project path="external/exfatprogs" name="android_external_exfatprogs" remote="shadedark" />
 <!-- <remove-project name="platform/external/fastrpc" />
   <project path="external/fastrpc" name="AOSPA/android_external_fastrpc" remote="aospa" /> -->
-  <remove-project name="AOSPA/android_external_freetype" />
-  <project path="external/freetype" name="android_external_freetype" remote="shadedark" />
 <!-- <remove-project name="platform/external/jemalloc_new" />
   <project path="external/jemalloc_new" name="AOSPA/android_external_jemalloc-new" remote="aospa" /> -->
-  <remove-project name="AOSPA/android_external_libcupsfilters" />
-  <project path="external/libcupsfilters" name="android_external_libcupsfilters" remote="shadedark" />
-  <remove-project name="AOSPA/android_external_libhevc" />
-  <project path="external/libhevc" name="android_external_libhevc" remote="shadedark" />
-  <remove-project name="AOSPA/android_external_libjxl" />
-  <project path="external/libjxl" name="android_external_libjxl" remote="shadedark" />
-  <remove-project name="AOSPA/android_external_libpng" />
-  <project path="external/libpng" name="android_external_libpng" remote="shadedark" />
-  <remove-project name="AOSPA/android_external_libppd" />
-  <project path="external/libppd" name="android_external_libppd" remote="shadedark" />
 <!-- <remove-project name="platform/external/tinycompress" />
   <project path="external/tinycompress" name="AOSPA/android_external_tinycompress" remote="aospa" /> -->
-  <remove-project name="AOSPA/android_external_wpa_supplicant_8" />
-  <project path="external/wpa_supplicant_8" name="android_external_wpa_supplicant_8" remote="shadedark" />
 
   <!-- Frameworks -->
   <remove-project name="AOSPA/android_frameworks_av" />
@@ -79,22 +57,14 @@
   <project path="frameworks/base" name="android_frameworks_base" remote="shadedark" />
   <remove-project name="AOSPA/android_frameworks_native" />
   <project path="frameworks/native" name="android_frameworks_native" remote="shadedark" />
-  <remove-project name="AOSPA/android_frameworks_opt_telephony" />
-  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" remote="shadedark" />
 
   <!-- Hardware -->
   <remove-project name="AOSPA/android_hardware_interfaces" />
   <project path="hardware/interfaces" name="android_hardware_interfaces" remote="shadedark" />
 <!-- <remove-project name="platform/hardware/libhardware" />
   <project path="hardware/libhardware" name="AOSPA/android_hardware_libhardware" remote="aospa" /> -->
-  <remove-project name="AOSPA/android_hardware_nxp_nfc" />
-  <project path="hardware/nxp/nfc" name="android_hardware_nxp_nfc" remote="shadedark" />
-  <remove-project name="AOSPA/android_hardware_nxp_secure_element" />
-  <project path="hardware/nxp/secure_element" name="android_hardware_nxp_secure_element" remote="shadedark" />
 <!-- <remove-project name="platform/hardware/qcom/wlan" />
   <project path="hardware/qcom/wlan" name="AOSPA/android_hardware_qcom_wlan" remote="aospa" /> -->
-  <remove-project name="AOSPA/android_hardware_st_nfc" />
-  <project path="hardware/st/nfc" name="android_hardware_st_nfc" remote="shadedark" />
 
   <!-- Hardware (Lineage)
   <project path="hardware/lineage/compat" name="AOSPA/android_hardware_lineage_compat" remote="aospa" /> -->
@@ -118,50 +88,20 @@
 <!-- <project path="packages/resources/devicesettings" name="AOSPA/android_packages_resources_devicesettings" remote="aospa" /> -->
 
   <!-- Packages -->
-  <remove-project name="AOSPA/android_packages_apps_Car_Settings" />
-  <project path="packages/apps/Car/Settings" name="android_packages_apps_Car_Settings" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_apps_ContactsPicker" />
-  <project path="packages/apps/ContactsPicker" name="android_packages_apps_ContactsPicker" remote="shadedark" />
   <remove-project name="AOSPA/android_packages_apps_Launcher3" />
   <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" remote="shadedark" />
   <remove-project name="AOSPA/android_packages_apps_Settings" />
   <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_apps_TV" />
-  <project path="packages/apps/TV" name="android_packages_apps_TV" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_apps_TvSettings" />
-  <project path="packages/apps/TvSettings" name="android_packages_apps_TvSettings" remote="shadedark" />
   <remove-project name="AOSPA/android_packages_apps_ThemePicker" />
   <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="shadedark" />
 <!-- <remove-project name="AOSPA/android_packages_apps_WallpaperPicker2" />
   <project path="packages/apps/WallpaperPicker2" name="android_packages_apps_WallpaperPicker2" remote="shadedark" /> -->
-  <remove-project name="AOSPA/android_packages_modules_adb" />
-  <project path="packages/modules/adb" name="android_packages_modules_adb" remote="shadedark" />
   <remove-project name="AOSPA/android_packages_modules_Bluetooth" />
   <project path="packages/modules/Bluetooth" name="android_packages_modules_Bluetooth" remote="shadedark" />
 <!-- <remove-project name="AOSPA/android_packages_modules_Connectivity" />
   <project path="packages/modules/Connectivity" name="android_packages_modules_Connectivity" remote="shadedark" /> -->
-  <remove-project name="AOSPA/android_packages_modules_Nfc" />
-  <project path="packages/modules/Nfc" name="android_packages_modules_Nfc" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_modules_Telephony" />
-  <project path="packages/modules/Telephony" name="android_packages_modules_Telephony" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_modules_Uwb" />
-  <project path="packages/modules/Uwb" name="android_packages_modules_Uwb" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_modules_Wifi" />
-  <project path="packages/modules/Wifi" name="android_packages_modules_Wifi" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_providers_ContactsProvider" />
-  <project path="packages/providers/ContactsProvider" name="android_packages_providers_ContactsProvider" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_providers_DownloadProvider" />
-  <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_providers_MediaProvider" />
-  <project path="packages/providers/MediaProvider" name="android_packages_providers_MediaProvider" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_providers_TelephonyProvider" />
-  <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_services_BuiltInPrintService" />
-  <project path="packages/services/BuiltInPrintService" name="android_packages_services_BuiltInPrintService" remote="shadedark" />
   <remove-project name="AOSPA/android_packages_services_Telecomm" />
   <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="shadedark" />
-  <remove-project name="AOSPA/android_packages_services_Telephony" />
-  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="shadedark" />
 
   <!-- Prebuilts (AOSPA)
   <project path="prebuilts/extract-tools" name="AOSPA/android_prebuilts_extract-tools" remote="aospa" /> -->
@@ -177,10 +117,6 @@
   <project path="system/fs/fs_mgr" name="android_system_fs_fs_mgr" remote="shadedark" />
 <!-- <remove-project name="platform/system/update_engine" />
   <project path="system/update_engine" name="AOSPA/android_system_update_engine" remote="aospa" /> -->
-  <remove-project name="AOSPA/android_system_libfmq" />
-  <project path="system/libfmq" name="android_system_libfmq" remote="shadedark" />
-  <remove-project name="AOSPA/android_system_libufdt" />
-  <project path="system/libufdt" name="android_system_libufdt" remote="shadedark" />
 <!-- <remove-project name="platform/system/memory/libion" />
   <project path="system/memory/libion" name="AOSPA/android_system_memory_libion" remote="aospa" /> -->
   <remove-project name="AOSPA/android_system_memory_lmkd" />
