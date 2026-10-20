@@ -98,8 +98,8 @@
   <project path="packages/apps/WallpaperPicker2" name="android_packages_apps_WallpaperPicker2" remote="shadedark" /> -->
   <remove-project name="AOSPA/android_packages_modules_Bluetooth" />
   <project path="packages/modules/Bluetooth" name="android_packages_modules_Bluetooth" remote="shadedark" />
-<!-- <remove-project name="AOSPA/android_packages_modules_Connectivity" />
-  <project path="packages/modules/Connectivity" name="android_packages_modules_Connectivity" remote="shadedark" /> -->
+  <remove-project name="AOSPA/android_packages_modules_Connectivity" />
+  <project path="packages/modules/Connectivity" name="android_packages_modules_Connectivity" remote="shadedark" />
   <remove-project name="AOSPA/android_packages_services_Telecomm" />
   <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="shadedark" />
 
@@ -230,5 +230,8 @@
 
   <!-- BCR -->
   <project path="vendor/bcr" name="Chaitanyakm/vendor_bcr" remote="github" revision="main" />
+
+  <remove-project name="platform/system/netd" />
+  <project path="system/netd" name="android_system_netd" remote="shadedark" revision="calcite" />
 
 </manifest>
