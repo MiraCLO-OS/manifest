@@ -81,8 +81,9 @@
   <project path="packages/apps/Aperture" name="LineageOS/android_packages_apps_Aperture" revision="lineage-23.2" remote="github" />
   <project path="packages/apps/ParanoidDoze" name="AOSPA/android_packages_apps_ParanoidDoze" remote="aospa" />
   <project path="packages/apps/ParanoidHub" name="AOSPA/android_packages_apps_ParanoidHub" remote="aospa" />
-  <project path="packages/apps/ParanoidPapers" name="AOSPA/android_packages_apps_ParanoidPapers" remote="aospa" />
-  <project path="packages/apps/ParanoidSettings" name="AOSPA/android_packages_apps_ParanoidSettings" remote="aospa" /> -->
+  <project path="packages/apps/ParanoidPapers" name="AOSPA/android_packages_apps_ParanoidPapers" remote="aospa" /> -->
+  <remove-project name="AOSPA/android_packages_apps_ParanoidSettings" /> 
+  <project path="packages/apps/ParanoidSettings" name="android_packages_apps_ParanoidSettings" remote="shadedark" />
   <remove-project name="AOSPA/android_packages_apps_Paranoid_SystemUI" />
   <project path="packages/apps/ParanoidSystemUI" name="android_packages_apps_Paranoid_SystemUI" remote="shadedark" />
 <!-- <project path="packages/resources/devicesettings" name="AOSPA/android_packages_resources_devicesettings" remote="aospa" /> -->
@@ -115,8 +116,8 @@
   <project path="system/core" name="android_system_core" remote="shadedark" />
   <remove-project name="AOSPA/android_system_fs_fs_mgr" />
   <project path="system/fs/fs_mgr" name="android_system_fs_fs_mgr" remote="shadedark" />
-<!-- <remove-project name="platform/system/update_engine" />
-  <project path="system/update_engine" name="AOSPA/android_system_update_engine" remote="aospa" /> -->
+  <remove-project name="AOSPA/android_system_update_engine" />
+  <project path="system/update_engine" name="android_system_update_engine" remote="shadedark" />
 <!-- <remove-project name="platform/system/memory/libion" />
   <project path="system/memory/libion" name="AOSPA/android_system_memory_libion" remote="aospa" /> -->
   <remove-project name="AOSPA/android_system_memory_lmkd" />
