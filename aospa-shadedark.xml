@@ -85,7 +85,7 @@
   <remove-project name="AOSPA/android_packages_apps_ParanoidSettings" /> 
   <project path="packages/apps/ParanoidSettings" name="android_packages_apps_ParanoidSettings" remote="shadedark" />
   <remove-project name="AOSPA/android_packages_apps_Paranoid_SystemUI" />
-  <project path="packages/apps/ParanoidSystemUI" name="android_packages_apps_Paranoid_SystemUI" remote="shadedark" />
+  <project path="packages/apps/ParanoidSystemUI" name="android_packages_apps_Paranoid_SystemUI" remote="miraclo" />
 <!-- <project path="packages/resources/devicesettings" name="AOSPA/android_packages_resources_devicesettings" remote="aospa" /> -->
 
   <!-- Packages -->
@@ -128,7 +128,7 @@
 
   <!-- Vendor (AOSPA) -->
   <remove-project name="AOSPA/android_vendor_aospa" />
-  <project path="vendor/aospa" name="android_vendor_aospa" remote="shadedark" revision="calcite" >
+  <project path="vendor/aospa" name="android_vendor_aospa" remote="miraclo" revision="calcite" >
     <linkfile src="build.sh" dest="rom-build.sh" />
   </project>
 <!-- <project path="vendor/aospa/prebuilt" name="android_vendor_aospa_prebuilt" remote="blobs-gitlab" />
