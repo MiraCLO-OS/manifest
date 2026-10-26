@@ -53,6 +53,10 @@
            fetch="https://github.com/aospa-shadedark"
            revision="calcite"/>
 
+  <remote  name="miraclo"
+           fetch="https://github.com/MiraCLO-OS"
+           revision="calcite"/>
+
   <!-- Local Remote -->
   <remote  name="keosh"
            fetch="https://github.com/mondrian-aospa"
