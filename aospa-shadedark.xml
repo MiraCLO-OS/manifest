@@ -90,7 +90,7 @@
 
   <!-- Packages -->
   <remove-project name="AOSPA/android_packages_apps_Launcher3" />
-  <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" remote="shadedark" />
+  <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" remote="miraclo" />
   <remove-project name="AOSPA/android_packages_apps_Settings" />
   <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="miraclo" />
   <remove-project name="AOSPA/android_packages_apps_ThemePicker" />
