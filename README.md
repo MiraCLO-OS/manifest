@@ -1,220 +1,78 @@
-# Paranoid Android
+# MiraCLO manifest
 
-## Set up your machine
+The repo manifest for **MiraCLO**, a CodeLinaro-based Android 17 ROM built on Paranoid Android (AOSPA) Calcite.
 
-You must run a 64-bit Linux distribution to build Paranoid Android.
-Follow the system setup instructions on the [Android Open Source Project website](https://source.android.com/source/initializing.html#setting-up-a-linux-build-environment).
-Google provides Ubuntu-specific setup packages and instructions.
-Complete the environment setup before you proceed.
+| | |
+| --- | --- |
+| Branch | `calcite` (Android 17) |
+| Base | [AOSPA](https://github.com/AOSPA) Calcite, via [aospa-shadedark/manifest](https://github.com/aospa-shadedark/manifest) |
+| Devices | `marble` (POCO F5 / Redmi Note 12 Turbo) |
+| Changes | See [CHANGELOG.md](CHANGELOG.md) |
 
-## Obtain the source
+## Requirements
 
-[Repo](https://source.android.com/source/developing.html) is a tool provided by Google that simplifies using [Git](https://git-scm.com/book) with Android source trees.
+- 64-bit Linux, Ubuntu 22.04 or newer recommended
+- 32 GB RAM or more (64 GB preferred)
+- 400 GB or more of free SSD space
+- Git and `repo` installed, with your Git name and email configured
 
-### Install Repo
+## Get the source
 
-Create a directory for `repo` and add it to your `PATH`:
 ```bash
-mkdir -p ~/.local/bin
-export PATH=~/.local/bin:$PATH
+mkdir -p ~/miraclo && cd ~/miraclo
+repo init -u https://github.com/MiraCLO-OS/manifest -b calcite --git-lfs --depth=1
+repo sync -c -j16 --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
 ```
 
-Download the `repo` binary:
-```bash
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.local/bin/repo
-```
+Device repositories for `marble` (device, kernel, vendor and HALs) are synced automatically during `lunch` from `vendor/aospa/products/marble/beans.xml`.
 
-Make the binary executable:
-```bash
-chmod a+x ~/.local/bin/repo
-```
-
-### Initialize Repo
-
-Create a working directory on a case-sensitive filesystem and navigate into it.
-Replace `WORKSPACE` with your chosen directory path.
-```bash
-mkdir WORKSPACE
-cd WORKSPACE
-```
-
-Initialize the manifest repository:
-
-> [!IMPORTANT]
-> Configure your real name and email address in Git before you initialize Repo if you plan to submit patches.
+If a later `repo sync` fails with `invalid upstream ... ^1` on the manifest, unshallow it once:
 
 ```bash
-repo init -u https://github.com/aospa-shadedark/manifest -b calcite --git-lfs
-```
-
-### Download the source tree
-
-Run `repo sync` to pull upstream source code.
-
-> [!NOTE]
-> Initial synchronization downloads the entire source history and takes significant time.
-
-The `-j` option specifies the number of concurrent network jobs.
-```bash
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-```
-
-> [!TIP]
-> A value of four jobs (`-j4`) works well for most internet connections.
-> Adjust this value based on your connection speed.
-
-#### Sync specific projects
-
-You can synchronize individual projects instead of the entire source tree.
-Specify projects by repository path or remote name.
-
-> [!WARNING]
-> Partial synchronization can cause build failures if changes span across projects.
-
-For example, specify `frameworks/base` or `AOSPA/android_frameworks_base`:
-```bash
-repo sync PROJECT
+git -C .repo/manifests fetch --unshallow origin
 ```
 
 ## Build
 
-The bundled builder script `./rom-build.sh` automates all build steps for a target device.
-Provide the target device codename as the argument (for example, `phone2` for Nothing Phone (2)).
-
-Navigate to your workspace root and execute the build script:
 ```bash
-cd WORKSPACE
-./rom-build.sh DEVICE
+./rom-build.sh marble -t userdebug -z
 ```
 
-## Submit patches
-
-Paranoid Android is open source and accepts patches from contributors.
-Track patch review status on [Gerrit Code Review](https://gerrit.aospa.co/).
-
-### Standard workflow with Repo
-
-Navigate to your workspace root:
-```bash
-cd WORKSPACE
-```
-
-Create a topic branch for the project you want to modify.
-Identify the project by repository name or local directory path:
-
-| Identify by | Command |
+| Flag | Meaning |
 | --- | --- |
-| Repository name | `repo start BRANCH AOSPA/PROJECT` |
-| Directory path | `repo start BRANCH PROJECT_DIR` |
+| `-t userdebug` / `-t user` | Build type: `userdebug` for testing, `user` for public releases |
+| `-z` | Also produce a fastboot image zip |
+| `-i` | Clean old images first (after changing kernel, build type or keys) |
+| `-s <dir>` | Sign with release keys from `<dir>` |
 
-For example, start a branch for `frameworks/base` (`AOSPA/android_frameworks_base`):
-```bash
-repo start BRANCH frameworks/base
-```
+Output zips are written to the root of the source tree:
 
-Navigate to the project directory:
-```bash
-cd PROJECT_DIR
-```
-
-Make your code changes, then stage and commit them:
-```bash
-git add -A
-git commit -a -s
-```
-
-Upload your changes to Gerrit for review:
-```bash
-cd WORKSPACE
-repo upload PROJECT_DIR
-```
-
-### Workflow with plain Git
-
-Navigate to the project directory:
-```bash
-cd PROJECT_DIR
-```
-
-Make your code changes, then stage and commit them:
-```bash
-git add -A
-git commit -a -s
-```
-
-Push the commit directly to Gerrit.
-Replace `USERNAME` with your Gerrit username and `PROJECT` with the repository name.
-```bash
-git push ssh://USERNAME@gerrit-ssh.aospa.co:29418/AOSPA/PROJECT HEAD:refs/for/calcite
-```
-
-### Gerrit push options
-
-Append a suffix to the refspec to configure review options.
-You can also toggle these options in the Gerrit web interface.
-
-| Suffix | Effect |
+| File | Use |
 | --- | --- |
-| `%private` | Upload a change as private |
-| `%wip` | Upload a change as work-in-progress |
-| `%remove-private` | Remove the private status from a change |
-| `%ready` | Mark a work-in-progress change as ready for review |
+| `MiraCLO-<ver>-<variant>-marble-<date>-gapps.zip` | Flash from recovery |
+| `MiraCLO-<ver>-<variant>-marble-<date>-gapps-image.zip` | Flash with `fastboot update` |
+| `…-signed-target_files.zip` | Build package for incremental OTAs; not for flashing |
 
-For example, upload a change as private:
-```bash
-git push ssh://USERNAME@gerrit-ssh.aospa.co:29418/AOSPA/PROJECT HEAD:refs/for/calcite%private
-```
+## Signed builds
 
-### Make additional changes
-
-To update an existing patch set, make your changes and amend the previous commit.
-
-> [!CAUTION]
-> Do not run `repo start` again.
-> Running `repo start` creates a new topic branch instead of updating the existing review.
+Official MiraCLO builds are signed with the maintainer's private release keys, which are **never** stored in any repository. Your own builds should use your own keys:
 
 ```bash
-git commit -a --amend
-```
-When you upload the amended commit, Gerrit attaches it as a new patch set to the existing review.
-
-### Squash multiple commits
-
-Each submitted patch must be a single commit.
-Squash multiple commits before you upload:
-```bash
-git rebase -i HEAD~<commit-count>
+./rom-build.sh marble -t user -z -s ~/.android-certs
 ```
 
-### Write commit messages
+## MiraCLO-maintained repositories
 
-Write clear and descriptive commit messages.
+| Path | Repository | Why it is forked |
+| --- | --- | --- |
+| `vendor/aospa` | `android_vendor_aospa` | Branding, version, build script, boot animation, wallpaper |
+| `frameworks/base` | `android_frameworks_base` | SystemUI Quick Settings changes |
+| `packages/apps/Settings` | `android_packages_apps_Settings` | MiraCLO version in About phone |
+| `packages/apps/ParanoidSystemUI` | `android_packages_apps_Paranoid_SystemUI` | Refresh-rate tile cleanup |
+| `hardware/xiaomi` | `android_hardware_xiaomi` | Dolby build fix |
 
-- Use the imperative mood in the subject line (for example, "Fix audio routing", not "Fixed audio routing").
-- Keep the subject line near 50 characters and under 72 characters.
-- Capitalize the first word of the subject line and omit trailing periods.
-- Prefix the subject with the relevant project or component name when appropriate (for example, `manifest: Update default branch`).
-- Separate the subject line from the message body with a blank line.
-- Wrap message body text at 72 characters.
+Every other repository comes unchanged from AOSPA or `aospa-shadedark`.
 
-## Translations
+## Credits
 
-Submit translations for Paranoid Android through Crowdin.
-Access the translation portal at https://crowdin.aospa.co.
-
-## Project assets and licensing
-
-### Source code
-
-The codebase uses the Apache License, Version 2.0 unless otherwise specified.
-Retain all copyright and license notices when you use or modify the source code.
-State any modifications you make to the code.
-Read the full license text at https://www.apache.org/licenses/LICENSE-2.0.
-
-### Images and branding assets
-
-Unless otherwise specified, all project assets (including images and branding) use the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license.
-You may share and adapt these assets for non-commercial purposes.
-You must provide attribution to the original author (Paranoid Android Project or AOSPA).
-Include a reference to the license, note any modifications, and link to https://aospa.co.
-Read the full license text at https://creativecommons.org/licenses/by-nc/4.0/.
+[Paranoid Android (AOSPA)](https://github.com/AOSPA), [ShadeDark6](https://github.com/aospa-shadedark), [Pzqqt](https://github.com/Pzqqt), [The LineageOS Project](https://github.com/LineageOS), [CodeLinaro](https://www.codelinaro.org/) and the Android Open Source Project.
