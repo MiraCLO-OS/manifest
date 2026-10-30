@@ -94,7 +94,7 @@
   <remove-project name="AOSPA/android_frameworks_av" />
   <project path="frameworks/av" name="android_frameworks_av" remote="miraclo" />
   <remove-project name="AOSPA/android_frameworks_base" />
-  <project path="frameworks/base" name="android_frameworks_base-private" remote="miraclo" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="miraclo" />
   <remove-project name="AOSPA/android_frameworks_native" />
   <project path="frameworks/native" name="android_frameworks_native" remote="miraclo" />
   <remove-project name="AOSPA/android_hardware_interfaces" />
@@ -108,7 +108,7 @@
   <remove-project name="AOSPA/android_packages_apps_Launcher3" />
   <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" remote="miraclo" />
   <remove-project name="AOSPA/android_packages_apps_Settings" />
-  <project path="packages/apps/Settings" name="android_packages_apps_Settings-private" remote="miraclo" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="miraclo" />
   <remove-project name="AOSPA/android_packages_apps_ThemePicker" />
   <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="miraclo" />
   <remove-project name="AOSPA/android_packages_modules_Bluetooth" />
@@ -128,7 +128,7 @@
   <remove-project name="AOSPA/android_system_memory_lmkd" />
   <project path="system/memory/lmkd" name="android_system_memory_lmkd" remote="miraclo" />
   <remove-project name="AOSPA/android_vendor_aospa" />
-  <project path="vendor/aospa" name="android_vendor_aospa-private" remote="miraclo" >
+  <project path="vendor/aospa" name="android_vendor_aospa" remote="miraclo" >
     <linkfile src="build.sh" dest="rom-build.sh" />
   </project>
   <remove-project name="proprietary_vendor_qcom_common" />
