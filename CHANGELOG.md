@@ -4,6 +4,80 @@ Every change made to MiraCLO, newest first. Each entry says **what** changed, **
 
 Format: `repository @ commit — summary`
 
+## 1.0 Beta 2 "Aurora" — 31-10-2000
+
+`user` build, signed with MiraCLO release keys. Dirty-flash over Beta 1.
+
+### Dynamic Island (new)
+- ColorOS 17-style Dynamic Island around the front camera
+- Own settings page: Settings › Notifications › Dynamic Island
+- Music and video with controls, album-art glow and recent players
+- Incoming and ongoing calls with Answer and Decline
+- Timers and stopwatch from Clock, with a "Time's up" card
+- Screen recording with countdown, timer and Stop
+- Live updates for navigation, rides and deliveries
+- Progress for downloads, Quick Share and recordings
+- Charging, earbuds battery, ringer mode and low battery alerts
+- Up to 3 activities at once as pills beside the camera
+- Tap to open a card; swipe and hold gestures
+- Optional haptics, touch glow and ambient glow
+- Hides inside its own app, on the lock screen and in full-screen apps
+- Replaces the status bar chip and pop-up for the same activity
+- Status bar trims to clock and battery when pills need room
+- Paused music leaves after 10 minutes (optional)
+- Every activity and behaviour can be turned off
+
+### Liquid Glass (new)
+- Clear glass look, chosen per place in Settings › Display › Liquid Glass
+- For Quick Settings, notifications, island cards, island pills, volume panel and power menu
+- Lock screen and pop-up notifications stay solid for readability
+- With Liquid Glass off, the dark ColorOS Quick Settings is solid, with no blur
+
+### Volume panel (new)
+- One UI-style panel: slim edge slider that opens to every volume
+- Ringer mode, media output and sound settings in the panel
+- Follows Material You colours and Liquid Glass
+- Android's panel is one switch away in Settings
+
+### About phone (redesigned)
+- ColorOS-style banner with your wallpaper, MiraCLO version and an Update button
+- Device name and maintainer first, every other detail in matching cards
+
+### Quick Settings
+- Smaller music buttons in the ColorOS style
+
+### Status bar
+- Network speed on one line, in the status bar font
+
+### MiraCLO kernel (new)
+- Own kernel, "aurora", built from MiraCLO-OS source
+- Linux 5.10.269 with the October 2026 security patch
+- BBR network congestion control by default
+- Larger zram (60% of RAM, up to 6 GB) keeps more apps in memory
+- 128 KB read-ahead for quicker app launches
+- Short touch boost on the performance cores for smoother scrolling
+- Root as separate recovery zips: KernelSU, KernelSU-Next and SukiSU-Ultra, each with SUSFS
+
+### Base
+- Updated to CLO LA.QSSI.17.0.r1-12300
+- Newer CLO Wi-Fi, Bluetooth, telephony, frameworks and build components
+- MiraCLO is now independent: every repository lives in the MiraCLO-OS organisation
+
+### Branding
+- New boot animation
+- Shorter, clearer texts across all MiraCLO settings
+- About banner in MiraCLO brand colours
+
+### Fixes
+- YouTube Music pill appears right away after minimising
+- Tapping a side pill opens its own card
+- Screen-record chip no longer shows over the island
+- Island timers, recent players and card buttons fixed
+- QS play button fixed
+
+### Known issues
+- Some banking apps (for example Kotak 811) report a security threat
+
 ---
 
 ## 1.0 Beta 1 "Aurora" — 2026-10-27
