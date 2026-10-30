@@ -4,7 +4,7 @@ Every change made to MiraCLO, newest first. Each entry says **what** changed, **
 
 Format: `repository @ commit — summary`
 
-## 1.0 Beta 2 "Aurora" — 31-10-2000
+## 1.0 Beta 2 "Aurora" — 31-10-2026
 
 `user` build, signed with MiraCLO release keys. Dirty-flash over Beta 1.
 
