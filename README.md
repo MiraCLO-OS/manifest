@@ -5,7 +5,7 @@ The repo manifest for **MiraCLO**, a CodeLinaro-based Android 17 ROM built on Pa
 | | |
 | --- | --- |
 | Branch | `calcite` (Android 17) |
-| Base | [AOSPA](https://github.com/AOSPA) Calcite, via [aospa-shadedark/manifest](https://github.com/aospa-shadedark/manifest) |
+| Base | [AOSPA](https://github.com/AOSPA) Calcite |
 | Devices | `marble` (POCO F5 / Redmi Note 12 Turbo) |
 | Changes | See [CHANGELOG.md](CHANGELOG.md) |
 

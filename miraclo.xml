@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- MiraCLO: everything that differs from official AOSPA. Upstream files stay untouched.
+       Device repos come from vendor/aospa/products/marble/beans.xml during lunch. -->
+
+  <!-- Platform -->
+  <remove-project name="platform/build/release" />
+  <project path="build/release" name="android_build_release" remote="miraclo" />
+  <remove-project name="platform/art" />
+  <project path="art" name="android_art" remote="miraclo" />
+  <remove-project name="platform/development" />
+  <project path="development" name="android_development" remote="miraclo" />
+  <remove-project name="platform/external/exfatprogs" />
+  <project path="external/exfatprogs" name="android_external_exfatprogs" remote="miraclo" />
+  <remove-project name="platform/external/freetype" />
+  <project path="external/freetype" name="android_external_freetype" remote="miraclo" />
+  <remove-project name="platform/external/libcupsfilters" />
+  <project path="external/libcupsfilters" name="android_external_libcupsfilters" remote="miraclo" />
+  <remove-project name="platform/external/libhevc" />
+  <project path="external/libhevc" name="android_external_libhevc" remote="miraclo" />
+  <remove-project name="platform/external/libjxl" />
+  <project path="external/libjxl" name="android_external_libjxl" remote="miraclo" />
+  <remove-project name="platform/external/libpng" />
+  <project path="external/libpng" name="android_external_libpng" remote="miraclo" />
+  <remove-project name="platform/external/libppd" />
+  <project path="external/libppd" name="android_external_libppd" remote="miraclo" />
+  <remove-project name="platform/external/wpa_supplicant_8" />
+  <project path="external/wpa_supplicant_8" name="android_external_wpa_supplicant_8" remote="miraclo" />
+  <remove-project name="platform/frameworks/opt/telephony" />
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" remote="miraclo" />
+  <remove-project name="platform/hardware/nxp/nfc" />
+  <project path="hardware/nxp/nfc" name="android_hardware_nxp_nfc" remote="miraclo" />
+  <remove-project name="platform/hardware/nxp/secure_element" />
+  <project path="hardware/nxp/secure_element" name="android_hardware_nxp_secure_element" remote="miraclo" />
+  <remove-project name="platform/hardware/st/nfc" />
+  <project path="hardware/st/nfc" name="android_hardware_st_nfc" remote="miraclo" />
+  <remove-project name="platform/packages/apps/Car/Settings" />
+  <project path="packages/apps/Car/Settings" name="android_packages_apps_Car_Settings" remote="miraclo" />
+  <remove-project name="platform/packages/apps/ContactsPicker" />
+  <project path="packages/apps/ContactsPicker" name="android_packages_apps_ContactsPicker" remote="miraclo" />
+  <remove-project name="platform/packages/apps/TV" />
+  <project path="packages/apps/TV" name="android_packages_apps_TV" remote="miraclo" />
+  <remove-project name="platform/packages/apps/TvSettings" />
+  <project path="packages/apps/TvSettings" name="android_packages_apps_TvSettings" remote="miraclo" />
+  <remove-project name="platform/packages/modules/adb" />
+  <project path="packages/modules/adb" name="android_packages_modules_adb" remote="miraclo" />
+  <remove-project name="platform/packages/modules/Nfc" />
+  <project path="packages/modules/Nfc" name="android_packages_modules_Nfc" remote="miraclo" />
+  <remove-project name="platform/packages/modules/Telephony" />
+  <project path="packages/modules/Telephony" name="android_packages_modules_Telephony" remote="miraclo" />
+  <remove-project name="platform/packages/modules/Uwb" />
+  <project path="packages/modules/Uwb" name="android_packages_modules_Uwb" remote="miraclo" />
+  <remove-project name="platform/packages/modules/Wifi" />
+  <project path="packages/modules/Wifi" name="android_packages_modules_Wifi" remote="miraclo" />
+  <remove-project name="platform/packages/providers/ContactsProvider" />
+  <project path="packages/providers/ContactsProvider" name="android_packages_providers_ContactsProvider" remote="miraclo" />
+  <remove-project name="platform/packages/providers/DownloadProvider" />
+  <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" remote="miraclo" />
+  <remove-project name="platform/packages/providers/MediaProvider" />
+  <project path="packages/providers/MediaProvider" name="android_packages_providers_MediaProvider" remote="miraclo" />
+  <remove-project name="platform/packages/providers/TelephonyProvider" />
+  <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" remote="miraclo" />
+  <remove-project name="platform/packages/services/BuiltInPrintService" />
+  <project path="packages/services/BuiltInPrintService" name="android_packages_services_BuiltInPrintService" remote="miraclo" />
+  <remove-project name="platform/packages/services/Telephony" />
+  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="miraclo" />
+  <remove-project name="platform/system/libfmq" />
+  <project path="system/libfmq" name="android_system_libfmq" remote="miraclo" />
+  <remove-project name="platform/system/libufdt" />
+  <project path="system/libufdt" name="android_system_libufdt" remote="miraclo" />
+
+  <!-- Core, frameworks, apps and vendor -->
+  <remove-project name="AOSPA/android_build" />
+  <project path="build/make" name="android_build" remote="miraclo" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <remove-project name="AOSPA/android_build_soong" />
+  <project path="build/soong" name="android_build_soong" remote="miraclo" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <remove-project name="AOSPA/android_bionic" />
+  <project path="bionic" name="android_bionic" remote="miraclo" />
+  <remove-project name="AOSPA/android_device_qcom_common" />
+  <project path="device/qcom/common" name="android_device_qcom_common" remote="miraclo" >
+    <linkfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk" />
+  </project>
+  <remove-project name="AOSPA/android_frameworks_av" />
+  <project path="frameworks/av" name="android_frameworks_av" remote="miraclo" />
+  <remove-project name="AOSPA/android_frameworks_base" />
+  <project path="frameworks/base" name="android_frameworks_base-private" remote="miraclo" />
+  <remove-project name="AOSPA/android_frameworks_native" />
+  <project path="frameworks/native" name="android_frameworks_native" remote="miraclo" />
+  <remove-project name="AOSPA/android_hardware_interfaces" />
+  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="miraclo" />
+  <remove-project name="AOSPA/manifest" />
+  <project path="manifest" name="manifest" remote="miraclo" />
+  <remove-project name="AOSPA/android_packages_apps_ParanoidSettings" />
+  <project path="packages/apps/ParanoidSettings" name="android_packages_apps_ParanoidSettings" remote="miraclo" />
+  <remove-project name="AOSPA/android_packages_apps_Paranoid_SystemUI" />
+  <project path="packages/apps/ParanoidSystemUI" name="android_packages_apps_Paranoid_SystemUI" remote="miraclo" />
+  <remove-project name="AOSPA/android_packages_apps_Launcher3" />
+  <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" remote="miraclo" />
+  <remove-project name="AOSPA/android_packages_apps_Settings" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings-private" remote="miraclo" />
+  <remove-project name="AOSPA/android_packages_apps_ThemePicker" />
+  <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="miraclo" />
+  <remove-project name="AOSPA/android_packages_modules_Bluetooth" />
+  <project path="packages/modules/Bluetooth" name="android_packages_modules_Bluetooth" remote="miraclo" />
+  <remove-project name="AOSPA/android_packages_modules_Connectivity" />
+  <project path="packages/modules/Connectivity" name="android_packages_modules_Connectivity" remote="miraclo" />
+  <remove-project name="AOSPA/android_packages_services_Telecomm" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="miraclo" />
+  <remove-project name="AOSPA/android_system_media" />
+  <project path="system/media" name="android_system_media" remote="miraclo" />
+  <remove-project name="AOSPA/android_system_core" />
+  <project path="system/core" name="android_system_core" remote="miraclo" />
+  <remove-project name="AOSPA/android_system_fs_fs_mgr" />
+  <project path="system/fs/fs_mgr" name="android_system_fs_fs_mgr" remote="miraclo" />
+  <remove-project name="AOSPA/android_system_update_engine" />
+  <project path="system/update_engine" name="android_system_update_engine" remote="miraclo" />
+  <remove-project name="AOSPA/android_system_memory_lmkd" />
+  <project path="system/memory/lmkd" name="android_system_memory_lmkd" remote="miraclo" />
+  <remove-project name="AOSPA/android_vendor_aospa" />
+  <project path="vendor/aospa" name="android_vendor_aospa-private" remote="miraclo" >
+    <linkfile src="build.sh" dest="rom-build.sh" />
+  </project>
+  <remove-project name="proprietary_vendor_qcom_common" />
+  <project path="vendor/qcom/common" name="proprietary_vendor_qcom_common" remote="miraclo" />
+  <remove-project name="AOSPA/android_vendor_qcom-opensource_bluetooth-commonsys" />
+  <project path="vendor/qcom/opensource/commonsys/bluetooth" name="android_vendor_qcom-opensource_bluetooth-commonsys" remote="miraclo" />
+  <remove-project name="AOSPA/android_vendor_qcom_opensource_commonsys-intf_display" />
+  <project path="vendor/qcom/opensource/commonsys-intf/display" name="android_vendor_qcom_opensource_commonsys-intf_display" remote="miraclo" />
+  <remove-project name="AOSPA/android_vendor_qcom-opensource_power" />
+  <project path="vendor/qcom/opensource/power" name="android_vendor_qcom-opensource_power" remote="miraclo" />
+  <remove-project name="platform/system/vold" />
+  <project path="system/vold" name="android_system_vold" remote="miraclo" />
+  <remove-project name="platform/packages/apps/Dialer" />
+  <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" remote="miraclo" />
+  <project path="packages/apps/LMOFreeform" name="android_packages_apps_LMOFreeform" remote="miraclo" />
+  <project path="vendor/pixel/clocks" name="proprietary_vendor_pixel_clocks" remote="miraclo" revision="seventeen" />
+  <project path="packages/apps/GameSpace" name="packages_apps_GameSpace" remote="miraclo" />
+  <remove-project name="platform/system/netd" />
+  <project path="system/netd" name="android_system_netd" remote="miraclo" />
+
+  <!-- Apps and extras from other projects -->
+  <project path="vendor/partner_gms" name="lineageos4microg/android_vendor_partner_gms" remote="github" revision="master" />
+  <remove-project name="platform/packages/apps/DeskClock" />
+  <project path="packages/apps/DeskClock" name="LineageOS/android_packages_apps_DeskClock" remote="github" revision="lineage-24.0" />
+  <remove-project name="platform/packages/apps/Calendar" />
+  <project path="packages/apps/Etar" name="LineageOS/android_packages_apps_Etar" remote="github" revision="lineage-24.0" />
+  <project path="packages/apps/ExactCalculator" name="LineageOS/android_packages_apps_ExactCalculator" remote="github" revision="lineage-24.0" />
+  <project path="packages/apps/Glimpse" name="crdroidandroid/android_packages_apps_Glimpse" remote="github" revision="17.0" />
+  <project path="packages/apps/Jelly" name="LineageOS/android_packages_apps_Jelly" remote="github" revision="lineage-24.0" />
+  <project path="packages/apps/Recorder" name="LineageOS/android_packages_apps_Recorder" remote="github" revision="lineage-24.0" />
+  <project path="packages/apps/Twelve" name="LineageOS/android_packages_apps_Twelve" remote="github" revision="lineage-24.0" />
+  <remove-project name="platform/packages/apps/QuickSearchBox" />
+  <project path="packages/apps/Canvas" name="LineageOS/android_packages_apps_Canvas" remote="github" revision="lineage-24.0" />
+  <remove-project name="platform/packages/apps/Contacts" />
+  <project path="packages/apps/Contacts" name="LineageOS/android_packages_apps_Contacts" remote="github" revision="lineage-24.0" />
+  <remove-project name="platform/packages/apps/Messaging" />
+  <project path="packages/apps/Messaging" name="crdroidandroid/android_packages_apps_Messaging" remote="github" revision="17.0" />
+  <remove-project name="platform/packages/inputmethods/LatinIME" />
+  <project path="packages/inputmethods/LatinIME" name="crdroidandroid/android_packages_inputmethods_LatinIME" remote="github" revision="17.0" />
+  <remove-project name="platform/external/chromium-webview" />
+  <project path="external/chromium-webview/patches" name="LineageOS/android_external_chromium-webview_patches" remote="github" revision="main" groups="pdk" >
+    <linkfile src="os_pickup.bp" dest="external/chromium-webview/Android.bp" />
+    <linkfile src="README" dest="external/chromium-webview/README" />
+  </project>
+  <project path="external/chromium-webview/prebuilt/arm" name="LineageOS/android_external_chromium-webview_prebuilt_arm" remote="github" revision="main" groups="pdk" />
+  <project path="external/chromium-webview/prebuilt/arm64" name="LineageOS/android_external_chromium-webview_prebuilt_arm64" remote="github" revision="main" groups="pdk" />
+  <project path="external/chromium-webview/prebuilt/x86" name="LineageOS/android_external_chromium-webview_prebuilt_x86" remote="github" revision="main" groups="pdk" />
+  <project path="external/chromium-webview/prebuilt/x86_64" name="LineageOS/android_external_chromium-webview_prebuilt_x86_64" remote="github" revision="main" groups="pdk" />
+  <project path="packages/apps/ParanoidSense" name="AOSPA/android_packages_apps_ParanoidSense" remote="aospa" />
+  <project path="external/ntfs-3g" name="LineageOS/android_external_ntfs-3g" remote="github" revision="lineage-24.0" />
+  <project path="vendor/bcr" name="Chaitanyakm/vendor_bcr" remote="github" revision="main" />
+
+
+</manifest>

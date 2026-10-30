@@ -48,23 +48,15 @@
   <remote  name="gitlab"
            fetch="https://gitlab.com" />
 
-  <!-- Local Remote -->
-  <remote  name="shadedark"
-           fetch="https://github.com/aospa-shadedark"
-           revision="calcite"/>
+  <include name="aosp.xml"/>
+  <include name="aospa.xml"/>
+  <include name="obsolete.xml"/>
 
+  <!-- MiraCLO -->
   <remote  name="miraclo"
            fetch="https://github.com/MiraCLO-OS"
            revision="calcite"/>
 
-  <!-- Local Remote -->
-  <remote  name="keosh"
-           fetch="https://github.com/mondrian-aospa"
-           revision="calcite"/>
-
-  <include name="aosp.xml"/>
-  <include name="aospa.xml"/>
-  <include name="obsolete.xml"/>
-  <include name="aospa-shadedark.xml"/>
+  <include name="miraclo.xml"/>
 
 </manifest>
